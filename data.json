@@ -1,0 +1,4336 @@
+{
+  "meta": {
+    "title": "Аудит контента OzonGame",
+    "date": "28 октября 2026",
+    "snapshotUtc": "2026-10-28T20:47:44Z",
+    "snapshotMoscow": "28.10.2026 23:47 МСК",
+    "registeredGames": 23,
+    "targetContent": 8,
+    "marbleLevels": 25,
+    "scope": "Аудит наличия и подключения контента. Полное прохождение всех игр и проверка на физических телефонах не проводились. Цены и награды — снимок; динамические значения помечены.",
+    "source": "Игровой каталог и текущий тестовый клиент OzonGame"
+  },
+  "findings": [
+    {
+      "title": "Мобильный лабиринт учтён отдельно",
+      "level": "info",
+      "text": "Наклонный лабиринт: 25 уровней, 5 локаций, датчики ориентации и резервное управление пальцем. Он не теряется внутри карточки Зумы."
+    },
+    {
+      "title": "Маршрут мобильной игры требует проверки",
+      "level": "review",
+      "text": "В мобильной галерее вместо «Зумы» открывается «Наклонный лабиринт». В основной игре используется другой маршрут запуска; отдельной записи лабиринта в обычном меню нет. Наличие подтверждено в проекте, запуск из основного меню на физическом телефоне требует проверки."
+    },
+    {
+      "title": "В меню показаны не все созданные игры",
+      "level": "review",
+      "text": "В основном реестре и мобильной ветке найдено 23 игровых вариантов. В тестовой версии-меню аптек используется 8 уникальных клиентских игр; остальные сохранены в аудите с указанием места подключения."
+    },
+    {
+      "title": "Целевой контент — награда, а не покупка",
+      "level": "info",
+      "text": "8 материалов приносят по 10 кристаллов однократно. В текущем клиенте выдача вызывается после успешного открытия материала. Подтверждение прохождения внешнего материала не является условием этого вызова."
+    },
+    {
+      "title": "Серверные номиналы не равны текущей экономике",
+      "level": "info",
+      "text": "У восьми целевых материалов в исходном справочнике наград указан номинал 1 монета, но тестовой версии-контент выдаёт кристаллы. В аудите показан действующий режим, старый номинал сохранён в деталях."
+    },
+    {
+      "title": "Цена улучшений зависит от прогресса",
+      "level": "info",
+      "text": "Для обычных улучшений показана стартовая цена по фактическому серверному правилу расчёта цены. Цены из старого справочника upgrades не подставляются вместо действующих. Премиальные цены: 20, 35 и 50 кристаллов; два ключа онлайн-сервиса являются альтернативами одной покупки."
+    },
+    {
+      "title": "Часть названий заменена в интерфейсе",
+      "level": "info",
+      "text": "Например, УФ-облучатели представлены улучшенной вентиляцией, а обучающий курс — кулером. Карточки показывают текущую презентацию тестовой версии; исходное имя доступно в деталях."
+    }
+  ],
+  "items": [
+    {
+      "key": "game-shelf",
+      "title": "Расставь на полку",
+      "kind": "games",
+      "description": "Складывай упаковки в ряды, как в тетрисе.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Награда зависит от собранных бонусов, победы и базового дохода. Меню аптеки №2",
+      "image": "assets/game-shelf.svg",
+      "tags": [
+        "Клиентская мини-игра",
+        "Меню аптеки №2"
+      ],
+      "rewardFormula": true
+    },
+    {
+      "key": "game-flappy",
+      "title": "Пролети через дозатор",
+      "kind": "games",
+      "description": "Веди пилюлю между труб, не задень их.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Награда зависит от собранных бонусов, победы и базового дохода. Меню аптеки №1",
+      "image": "assets/game-flappy.svg",
+      "tags": [
+        "Клиентская мини-игра",
+        "Меню аптеки №1"
+      ],
+      "rewardFormula": true
+    },
+    {
+      "key": "game-snake",
+      "title": "Выпиши рецепт",
+      "kind": "games",
+      "description": "Змейка собирает лекарства и растёт. Красные — яд.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Награда зависит от собранных бонусов, победы и базового дохода. Меню аптеки №2",
+      "image": "assets/game-snake.svg",
+      "tags": [
+        "Клиентская мини-игра",
+        "Меню аптеки №2"
+      ],
+      "rewardFormula": true
+    },
+    {
+      "key": "game-stack",
+      "title": "Срок годности",
+      "kind": "games",
+      "description": "Ставь коробки одну на другую как можно ровнее.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Награда зависит от собранных бонусов, победы и базового дохода. Есть в проекте и галерее игр, но не включена в текущее меню аптек.",
+      "image": "assets/game-stack.svg",
+      "tags": [
+        "Клиентская мини-игра"
+      ],
+      "rewardFormula": true
+    },
+    {
+      "key": "game-pill_press",
+      "title": "Таблеточный пресс",
+      "kind": "games",
+      "description": "Останови бегунок в зелёной зоне.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Награда зависит от собранных бонусов, победы и базового дохода. Есть в проекте и галерее игр, но не включена в текущее меню аптек.",
+      "image": "assets/game-pill.svg",
+      "tags": [
+        "Клиентская мини-игра"
+      ],
+      "rewardFormula": true
+    },
+    {
+      "key": "game-runner",
+      "title": "Беги, фармацевт",
+      "kind": "games",
+      "description": "Беги и перепрыгивай препятствия.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Награда зависит от собранных бонусов, победы и базового дохода. Есть в проекте и галерее игр, но не включена в текущее меню аптек.",
+      "image": "assets/game-runner.svg",
+      "tags": [
+        "Клиентская мини-игра"
+      ],
+      "rewardFormula": true
+    },
+    {
+      "key": "game-shelf_jump",
+      "title": "Прыжки по полкам",
+      "kind": "games",
+      "description": "Прыгай вверх по полкам и не падай.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Награда зависит от собранных бонусов, победы и базового дохода. Меню аптеки №1",
+      "image": "assets/game-jump.svg",
+      "tags": [
+        "Клиентская мини-игра",
+        "Меню аптеки №1"
+      ],
+      "rewardFormula": true
+    },
+    {
+      "key": "game-sort",
+      "title": "Сортировка лекарств",
+      "kind": "games",
+      "description": "Раскидай падающие упаковки по цвету полок.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Награда зависит от собранных бонусов, победы и базового дохода. Есть в проекте и галерее игр, но не включена в текущее меню аптек.",
+      "image": "assets/game-sort.svg",
+      "tags": [
+        "Клиентская мини-игра"
+      ],
+      "rewardFormula": true
+    },
+    {
+      "key": "game-zuma",
+      "title": "Зума: цепочка пилюль",
+      "kind": "games",
+      "description": "Сбивай цепочку пилюль по 3 одного цвета. Целься и стреляй вокруг себя на 360°.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Награда зависит от собранных бонусов, победы и базового дохода. Меню аптеки №1 / Меню аптеки №2",
+      "image": "assets/game-zuma.svg",
+      "tags": [
+        "Клиентская мини-игра",
+        "Меню аптеки №1",
+        "Меню аптеки №2"
+      ],
+      "rewardFormula": true
+    },
+    {
+      "key": "game-pipes",
+      "title": "Соедини трубы",
+      "kind": "games",
+      "description": "Поверни трубы и пусти сироп в колбу.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Награда зависит от собранных бонусов, победы и базового дохода. Есть в проекте и галерее игр, но не включена в текущее меню аптек.",
+      "image": "assets/game-pipes.svg",
+      "tags": [
+        "Клиентская мини-игра"
+      ],
+      "rewardFormula": true
+    },
+    {
+      "key": "game-sling",
+      "title": "Рогатка против бактерий",
+      "kind": "games",
+      "description": "Сбей все бактерии из рогатки.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Награда зависит от собранных бонусов, победы и базового дохода. Меню аптеки №1",
+      "image": "assets/game-sling.svg",
+      "tags": [
+        "Клиентская мини-игра",
+        "Меню аптеки №1"
+      ],
+      "rewardFormula": true
+    },
+    {
+      "key": "game-water",
+      "title": "Прокопай канал",
+      "kind": "games",
+      "description": "Прокопай путь воде до чашки.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Награда зависит от собранных бонусов, победы и базового дохода. Есть в проекте и галерее игр, но не включена в текущее меню аптек.",
+      "image": "assets/game-water.svg",
+      "tags": [
+        "Клиентская мини-игра"
+      ],
+      "rewardFormula": true
+    },
+    {
+      "key": "game-frogger",
+      "title": "Перебеги ленты",
+      "kind": "games",
+      "description": "Ты — курьер аптеки: донеси посылку через конвейерные ленты до прилавка, не попади под коробки.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Награда зависит от собранных бонусов, победы и базового дохода. Меню аптеки №1",
+      "image": "assets/game-frogger.svg",
+      "tags": [
+        "Клиентская мини-игра",
+        "Меню аптеки №1"
+      ],
+      "rewardFormula": true
+    },
+    {
+      "key": "game-rush",
+      "title": "Раздвинь коробки",
+      "kind": "games",
+      "description": "Освободи золотую коробку к выходу.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Награда зависит от собранных бонусов, победы и базового дохода. Меню аптеки №2",
+      "image": "assets/game-rush.svg",
+      "tags": [
+        "Клиентская мини-игра",
+        "Меню аптеки №2"
+      ],
+      "rewardFormula": true
+    },
+    {
+      "key": "game-tag",
+      "title": "Пятнашки",
+      "kind": "games",
+      "description": "Классическая игра-головоломка, где нужно собрать числа по порядку",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "server",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Серверные номиналы: 1, 50 монет. В тестовой версии-меню заменена клиентскими мини-играми.",
+      "image": "",
+      "tags": [
+        "Серверная игра"
+      ],
+      "serverRewardAmounts": [
+        1,
+        50
+      ]
+    },
+    {
+      "key": "game-clean",
+      "title": "Наведи чистоту",
+      "kind": "games",
+      "description": "К сожалению, наш прилавок испачкался! Придется взять тряпку и стереть все пятна! Но нужно успеть сделать это за 60 секунд!",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "server",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Серверные номиналы: 1 монет. В тестовой версии-меню заменена клиентскими мини-играми.",
+      "image": "",
+      "tags": [
+        "Серверная игра"
+      ],
+      "serverRewardAmounts": [
+        1
+      ]
+    },
+    {
+      "key": "game-bacteria",
+      "title": "Бактерии",
+      "kind": "games",
+      "description": "Увлекательная игра на развитие внимания и реакции",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "server",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Серверные номиналы: 1 монет. В тестовой версии-меню заменена клиентскими мини-играми.",
+      "image": "",
+      "tags": [
+        "Серверная игра"
+      ],
+      "serverRewardAmounts": [
+        1
+      ]
+    },
+    {
+      "key": "game-Игра кнопки",
+      "title": "Игра кнопки",
+      "kind": "games",
+      "description": "Игра зарегистрирована в основной игровой обёртке.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "В реестре компонентов; отдельной записи в каталоге API нет.",
+      "image": "",
+      "tags": [
+        "В реестре компонентов"
+      ],
+      "serverRewardAmounts": []
+    },
+    {
+      "key": "game-pill",
+      "title": "Поймай таблетку",
+      "kind": "games",
+      "description": "Развивайте ловкость и внимание в этой увлекательной игре",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "server",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Серверные номиналы: 1 монет. В тестовой версии-меню заменена клиентскими мини-играми.",
+      "image": "",
+      "tags": [
+        "Серверная игра"
+      ],
+      "serverRewardAmounts": [
+        1
+      ]
+    },
+    {
+      "key": "game-match3",
+      "title": "Три в ряд",
+      "kind": "games",
+      "description": "Классическая головоломка три в ряд. Объединяйте одинаковые элементы и зарабатывайте награды",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "server",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Серверные номиналы: 25 монет. В тестовой версии-меню заменена клиентскими мини-играми.",
+      "image": "",
+      "tags": [
+        "Серверная игра"
+      ],
+      "serverRewardAmounts": [
+        25
+      ]
+    },
+    {
+      "key": "game-memory",
+      "title": "Найди пару",
+      "kind": "games",
+      "description": "Тренируйте память, открывая пары карточек. Найдите все совпадения и заработайте награды",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "server",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Серверные номиналы: 25 монет. В тестовой версии-меню заменена клиентскими мини-играми.",
+      "image": "",
+      "tags": [
+        "Серверная игра"
+      ],
+      "serverRewardAmounts": [
+        25
+      ]
+    },
+    {
+      "key": "game-breakout",
+      "title": "Арканоид",
+      "kind": "games",
+      "description": "Разбейте все блоки, управляя платформой. Классическая аркада для развития реакции",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "server",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "Серверные номиналы: 50 монет. В тестовой версии-меню заменена клиентскими мини-играми.",
+      "image": "",
+      "tags": [
+        "Серверная игра"
+      ],
+      "serverRewardAmounts": [
+        50
+      ]
+    },
+    {
+      "key": "game-marble",
+      "title": "Наклонный лабиринт",
+      "kind": "games",
+      "description": "Катайте шарик по карте наклоном телефона, обходите ямы и доведите его до цели.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": null,
+      "status": "review",
+      "platforms": [
+        "mobile"
+      ],
+      "source": "Игровые компоненты и меню OzonGame",
+      "notes": "25 уровней, 5 локаций. Датчики ориентации телефона, калибровка положения; на iOS требуется разрешение. Если датчики недоступны — управление пальцем. В мобильной галерее использует слот «Зума»; основной маршрут запуска отличается. Начисление награды через основной вход требует проверки.",
+      "image": "assets/marble-level.svg",
+      "tags": [
+        "Только телефон",
+        "Датчики наклона",
+        "25 уровней",
+        "Нужно проверить запуск"
+      ],
+      "levels": 25,
+      "themes": [
+        {
+          "key": "warehouse",
+          "name": "Аптечный склад"
+        },
+        {
+          "key": "lab",
+          "name": "Лаборатория"
+        },
+        {
+          "key": "cold",
+          "name": "Холодильная камера"
+        },
+        {
+          "key": "garden",
+          "name": "Оранжерея"
+        },
+        {
+          "key": "night",
+          "name": "Ночная аптека"
+        }
+      ],
+      "rewardFormula": false
+    },
+    {
+      "key": "quest-5",
+      "title": "Первая аптека",
+      "kind": "quests",
+      "description": "Почти исторические приключения",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 1,
+      "status": "server",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровой каталог квестов и материалов",
+      "notes": "В исходном каталоге указан номинал 1 монета; в отдельном разделе «Кристаллы» не показывается. В заданиях тестовой версии квест «Первая аптека» подменён Зумой.",
+      "image": "",
+      "tags": [
+        "Каталог квестов",
+        "Внешний материал"
+      ],
+      "url": "https://pharmgame1.med-game.ru/scenario/index.html#/game/401/?is_game=true",
+      "pharmacy": 1,
+      "target": false,
+      "legacyCoins": 1,
+      "kindDetail": "quest"
+    },
+    {
+      "key": "quest-6",
+      "title": "Гепатопротекторные и желчегонные препараты",
+      "kind": "quests",
+      "description": "Поговорите с покупателями и помоги подобрать им препараты",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 1,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровой каталог квестов и материалов",
+      "notes": "В исходном каталоге указан номинал 1 монета; в отдельном разделе «Кристаллы» не показывается.",
+      "image": "",
+      "tags": [
+        "Каталог квестов",
+        "Внешний материал"
+      ],
+      "url": "https://pharmgame1.med-game.ru/scenario/index.html#/game/416/?is_game=true",
+      "pharmacy": 1,
+      "target": false,
+      "legacyCoins": 1,
+      "kindDetail": "quest"
+    },
+    {
+      "key": "quest-7",
+      "title": "Противовирусные препараты",
+      "kind": "quests",
+      "description": "Ответь на коварные вопросы о противовирусных препаратах",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 1,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровой каталог квестов и материалов",
+      "notes": "В исходном каталоге указан номинал 1 монета; в отдельном разделе «Кристаллы» не показывается.",
+      "image": "",
+      "tags": [
+        "Каталог квестов",
+        "Внешний материал"
+      ],
+      "url": "https://pharmgame1.med-game.ru/scenario/index.html#/game/417/?is_game=true",
+      "pharmacy": 1,
+      "target": false,
+      "legacyCoins": 1,
+      "kindDetail": "quest"
+    },
+    {
+      "key": "quest-8",
+      "title": "Вас укусил клещ. Что делать?",
+      "kind": "quests",
+      "description": "Помогите себе, избавитесь от клеща, не раздавив его!",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 1,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровой каталог квестов и материалов",
+      "notes": "В исходном каталоге указан номинал 1 монета; в отдельном разделе «Кристаллы» не показывается.",
+      "image": "",
+      "tags": [
+        "Каталог квестов",
+        "Внешний материал"
+      ],
+      "url": "https://pharmgame1.med-game.ru/scenario/index.html#/game/326/?is_game=true",
+      "pharmacy": 1,
+      "target": false,
+      "legacyCoins": 1,
+      "kindDetail": "quest"
+    },
+    {
+      "key": "quest-9",
+      "title": "Тайны древних аптек",
+      "kind": "quests",
+      "description": "Узнайте, как возникла профессия фармацевт (почти сказочная история)",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 1,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровой каталог квестов и материалов",
+      "notes": "В исходном каталоге указан номинал 1 монета; в отдельном разделе «Кристаллы» не показывается.",
+      "image": "",
+      "tags": [
+        "Каталог квестов",
+        "Внешний материал"
+      ],
+      "url": "https://pharmgame1.med-game.ru/scenario/index.html#/game/418/?is_game=true",
+      "pharmacy": 1,
+      "target": false,
+      "legacyCoins": 1,
+      "kindDetail": "quest"
+    },
+    {
+      "key": "quest-10",
+      "title": "Продажа тонометра",
+      "kind": "target",
+      "description": "Поговрите с покупателем и помогите ему купить тонометр",
+      "currency": "crystals",
+      "direction": "earn",
+      "amount": 10,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Раздел целевого контента",
+      "notes": "Награда +10 кристаллов за первый засчитанный материал; повторное начисление запрещено. В текущем клиенте начисление вызывается после успешного открытия материала, а не подтверждения результата.",
+      "image": "",
+      "tags": [
+        "Целевой контент",
+        "Практический кейс"
+      ],
+      "url": "https://pharmgame1.med-game.ru/scenario/index.html#/game/414/?is_game=true",
+      "pharmacy": 1,
+      "target": true,
+      "legacyCoins": 1,
+      "kindDetail": "case"
+    },
+    {
+      "key": "quest-11",
+      "title": "Возврат тонометра",
+      "kind": "target",
+      "description": "Поговрите с покупателем, кажется у него сломался тонометр",
+      "currency": "crystals",
+      "direction": "earn",
+      "amount": 10,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Раздел целевого контента",
+      "notes": "Награда +10 кристаллов за первый засчитанный материал; повторное начисление запрещено. В текущем клиенте начисление вызывается после успешного открытия материала, а не подтверждения результата.",
+      "image": "",
+      "tags": [
+        "Целевой контент",
+        "Практический кейс"
+      ],
+      "url": "https://pharmgame1.med-game.ru/scenario/index.html#/game/415/?is_game=true",
+      "pharmacy": 1,
+      "target": true,
+      "legacyCoins": 1,
+      "kindDetail": "case"
+    },
+    {
+      "key": "quest-16",
+      "title": "Видеоурок «Круоксабан»",
+      "kind": "target",
+      "description": "Пройдите крок и узнайте точно, как, кому и когда можно предложить данный препарат",
+      "currency": "crystals",
+      "direction": "earn",
+      "amount": 10,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Раздел целевого контента",
+      "notes": "Награда +10 кристаллов за первый засчитанный материал; повторное начисление запрещено. В текущем клиенте начисление вызывается после успешного открытия материала, а не подтверждения результата.",
+      "image": "",
+      "tags": [
+        "Целевой контент",
+        "Внешний материал"
+      ],
+      "url": "https://pharmskills.ru/services/videouroki/kruoksaban-video/",
+      "pharmacy": 1,
+      "target": true,
+      "legacyCoins": 1,
+      "kindDetail": "material"
+    },
+    {
+      "key": "quest-17",
+      "title": "Информирование при отпуске сердечно-сосудистых препаратов",
+      "kind": "target",
+      "description": "Узнайте ключевые аспекты консультирования пациентов с ССЗ, научитесь распознавать угрожающие состояния,  познакомбтесь с дженериками",
+      "currency": "crystals",
+      "direction": "earn",
+      "amount": 10,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Раздел целевого контента",
+      "notes": "Награда +10 кристаллов за первый засчитанный материал; повторное начисление запрещено. В текущем клиенте начисление вызывается после успешного открытия материала, а не подтверждения результата.",
+      "image": "",
+      "tags": [
+        "Целевой контент",
+        "Внешний материал"
+      ],
+      "url": "https://pharmskills.ru/services/uroki/osobennosti-informirovaniya-pri-otpuske-preparatov-dlya-lecheniya-serdechno-sosudistykh-zabolevaniy-/",
+      "pharmacy": 1,
+      "target": true,
+      "legacyCoins": 1,
+      "kindDetail": "material"
+    },
+    {
+      "key": "quest-18",
+      "title": "Вебинар об иммуномодуляторах",
+      "kind": "target",
+      "description": "Познакомьтесь с  современными подходами к иммунокоррекци и узнайте, как грамотно консультировать покупателей на тему «Безрецептурные иммуномодуляторы»",
+      "currency": "crystals",
+      "direction": "earn",
+      "amount": 10,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Раздел целевого контента",
+      "notes": "Награда +10 кристаллов за первый засчитанный материал; повторное начисление запрещено. В текущем клиенте начисление вызывается после успешного открытия материала, а не подтверждения результата.",
+      "image": "",
+      "tags": [
+        "Целевой контент",
+        "Внешний материал"
+      ],
+      "url": "https://pharmskills.ru/events/bezretsepturnye-immunomodulyatory-profil-bezopasnosti-protivopokazaniya-i-vazhnye-aspekty-informirovaniya/",
+      "pharmacy": 1,
+      "target": true,
+      "legacyCoins": 1,
+      "kindDetail": "material"
+    },
+    {
+      "key": "quest-19",
+      "title": "Подкаст о первой помощи в аптеке",
+      "kind": "target",
+      "description": "Узнайте, почему даже “безобидная” таблетка из аптечки может привести к уголовной ответственности и как действовать строго по закону",
+      "currency": "crystals",
+      "direction": "earn",
+      "amount": 10,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Раздел целевого контента",
+      "notes": "Награда +10 кристаллов за первый засчитанный материал; повторное начисление запрещено. В текущем клиенте начисление вызывается после успешного открытия материала, а не подтверждения результата.",
+      "image": "",
+      "tags": [
+        "Целевой контент",
+        "Внешний материал"
+      ],
+      "url": "https://pharmskills.ru/services/podkasty/esli-cheloveku-stalo-plokho-kak-okazat-pervuyu-pomoshch-v-apteke-ne-narushiv-zakon/",
+      "pharmacy": 1,
+      "target": true,
+      "legacyCoins": 1,
+      "kindDetail": "material"
+    },
+    {
+      "key": "quest-20",
+      "title": "Материал о лечении мигрени",
+      "kind": "target",
+      "description": "Проверьте, насколько хорошо вы знаете препарат",
+      "currency": "crystals",
+      "direction": "earn",
+      "amount": 10,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Раздел целевого контента",
+      "notes": "Награда +10 кристаллов за первый засчитанный материал; повторное начисление запрещено. В текущем клиенте начисление вызывается после успешного открытия материала, а не подтверждения результата.",
+      "image": "",
+      "tags": [
+        "Целевой контент",
+        "Внешний материал"
+      ],
+      "url": "https://pharmskills.ru/services/testy-po-preparatam/tsefalotriptan-test/",
+      "pharmacy": 1,
+      "target": true,
+      "legacyCoins": 1,
+      "kindDetail": "material"
+    },
+    {
+      "key": "quest-21",
+      "title": "Вебинар о купировании приступов мигрени",
+      "kind": "target",
+      "description": "Углубите свои знания и научитесь говорить о мигрени на языке профессионалов!",
+      "currency": "crystals",
+      "direction": "earn",
+      "amount": 10,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Раздел целевого контента",
+      "notes": "Награда +10 кристаллов за первый засчитанный материал; повторное начисление запрещено. В текущем клиенте начисление вызывается после успешного открытия материала, а не подтверждения результата.",
+      "image": "",
+      "tags": [
+        "Целевой контент",
+        "Внешний материал"
+      ],
+      "url": "https://pharmskills.ru/events/sovremennyy-podkhod-k-kupirovaniyu-pristupov-migreni-eletriptan-i-drugie-molekuly/",
+      "pharmacy": 1,
+      "target": true,
+      "legacyCoins": 1,
+      "kindDetail": "material"
+    },
+    {
+      "key": "quest-24",
+      "title": "Вебинар: Ступенчатая терапия мигрени: от простого к сложному.",
+      "kind": "quests",
+      "description": "Вебинар: Ступенчатая терапия мигрени: от простого к сложному.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 1,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровой каталог квестов и материалов",
+      "notes": "В исходном каталоге указан номинал 1 монета; в отдельном разделе «Кристаллы» не показывается.",
+      "image": "",
+      "tags": [
+        "Каталог квестов",
+        "Внешний материал"
+      ],
+      "url": "https://www.pharmskills.ru/events/stupenchataya-terapiya-migreni-ot-prostogo-k-slozhnomu/",
+      "pharmacy": 2,
+      "target": false,
+      "legacyCoins": 1,
+      "kindDetail": "quest"
+    },
+    {
+      "key": "quest-25",
+      "title": "Интерактивный тренажёр Кардиология",
+      "kind": "quests",
+      "description": "Получите инъекцию знаний по кардиологии: патологиям, причинам, симптомам и препаратам",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 1,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровой каталог квестов и материалов",
+      "notes": "В исходном каталоге указан номинал 1 монета; в отдельном разделе «Кристаллы» не показывается.",
+      "image": "",
+      "tags": [
+        "Каталог квестов",
+        "Внешний материал"
+      ],
+      "url": "https://activer.fun/ru/farmatsevtika/serdtse-i-sosudy-kardiologiya/",
+      "pharmacy": 2,
+      "target": false,
+      "legacyCoins": 1,
+      "kindDetail": "quest"
+    },
+    {
+      "key": "quest-26",
+      "title": "Тест: Препарат для лечения мигрени Цефалотриптан",
+      "kind": "quests",
+      "description": "Проверьте, насколько хорошо вы знаете препарат ",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 1,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровой каталог квестов и материалов",
+      "notes": "В исходном каталоге указан номинал 1 монета; в отдельном разделе «Кристаллы» не показывается.",
+      "image": "",
+      "tags": [
+        "Каталог квестов",
+        "Внешний материал"
+      ],
+      "url": "https://www.pharmskills.ru/services/testy-po-preparatam/tsefalotriptan-test/",
+      "pharmacy": 2,
+      "target": false,
+      "legacyCoins": 1,
+      "kindDetail": "quest"
+    },
+    {
+      "key": "quest-27",
+      "title": "Интерактивный тренажёр Флебология",
+      "kind": "quests",
+      "description": "Получите инъекцию знаний по флебологии: патологиям, причинам, симптомам и препаратам",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 1,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровой каталог квестов и материалов",
+      "notes": "В исходном каталоге указан номинал 1 монета; в отдельном разделе «Кристаллы» не показывается.",
+      "image": "",
+      "tags": [
+        "Каталог квестов",
+        "Внешний материал"
+      ],
+      "url": "https://activer.fun/ru/farmatsevtika/veny-flebologiya/",
+      "pharmacy": 2,
+      "target": false,
+      "legacyCoins": 1,
+      "kindDetail": "quest"
+    },
+    {
+      "key": "quest-28",
+      "title": "Вебинар: Новая эра в терапии эректильной дисфункции. Как стать экспертом для посетителей аптек",
+      "kind": "quests",
+      "description": "Получите новые знания и повысьте свой профессиональный статус, получите готовые к использованию в работе аптеки алгоритмы",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 1,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровой каталог квестов и материалов",
+      "notes": "В исходном каталоге указан номинал 1 монета; в отдельном разделе «Кристаллы» не показывается.",
+      "image": "",
+      "tags": [
+        "Каталог квестов",
+        "Внешний материал"
+      ],
+      "url": "https://www.pharmskills.ru/events/novaya-era-v-terapii-erektilnoy-disfunktsii-kak-stat-ekspertom-dlya-posetiteley-aptek/",
+      "pharmacy": 2,
+      "target": false,
+      "legacyCoins": 1,
+      "kindDetail": "quest"
+    },
+    {
+      "key": "quest-29",
+      "title": "Интерактивный тренажёр Дерматология",
+      "kind": "quests",
+      "description": "Получите инъекцию знаний по дерматологии: патологиям, причинам, симптомам и препаратам",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 1,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровой каталог квестов и материалов",
+      "notes": "В исходном каталоге указан номинал 1 монета; в отдельном разделе «Кристаллы» не показывается.",
+      "image": "",
+      "tags": [
+        "Каталог квестов",
+        "Внешний материал"
+      ],
+      "url": "https://activer.fun/ru/farmatsevtika/kozha-dermatologiya/",
+      "pharmacy": 2,
+      "target": false,
+      "legacyCoins": 1,
+      "kindDetail": "quest"
+    },
+    {
+      "key": "quest-30",
+      "title": "Интерактивный тренажёр Гастроэнтерология",
+      "kind": "quests",
+      "description": "Получите инъекцию знаний по гастроэнтерологии: патологиям, причинам, симптомам и препаратам",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 1,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровой каталог квестов и материалов",
+      "notes": "В исходном каталоге указан номинал 1 монета; в отдельном разделе «Кристаллы» не показывается.",
+      "image": "",
+      "tags": [
+        "Каталог квестов",
+        "Внешний материал"
+      ],
+      "url": "https://activer.fun/ru/farmatsevtika/pishhevaritelnaya-sistema-gastroenterologiya/",
+      "pharmacy": 2,
+      "target": false,
+      "legacyCoins": 1,
+      "kindDetail": "quest"
+    },
+    {
+      "key": "quest-31",
+      "title": "Вебинар: Аптека: почему нам не нравится там работать?",
+      "kind": "quests",
+      "description": "Ежедневный стресс и выгорание фармацевта в аптеке? На вебинаре откровенно обсудим  источники нашей боли и способы остаться в порядке",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 1,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровой каталог квестов и материалов",
+      "notes": "В исходном каталоге указан номинал 1 монета; в отдельном разделе «Кристаллы» не показывается.",
+      "image": "",
+      "tags": [
+        "Каталог квестов",
+        "Внешний материал"
+      ],
+      "url": "https://www.pharmskills.ru/events/vebinar-12-apteka-pochemu-nam-ne-nravitsya-tam-rabotat/",
+      "pharmacy": 2,
+      "target": false,
+      "legacyCoins": 1,
+      "kindDetail": "quest"
+    },
+    {
+      "key": "quest-32",
+      "title": "Интерактивный тренажёр Урология",
+      "kind": "quests",
+      "description": "Получите инъекцию знаний по урологии: патологиям, причинам, симптомам и препаратам",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 1,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровой каталог квестов и материалов",
+      "notes": "В исходном каталоге указан номинал 1 монета; в отдельном разделе «Кристаллы» не показывается.",
+      "image": "",
+      "tags": [
+        "Каталог квестов",
+        "Внешний материал"
+      ],
+      "url": "https://activer.fun/ru/farmatsevtika/mochepolovaya-sistema-urologiya/",
+      "pharmacy": 2,
+      "target": false,
+      "legacyCoins": 1,
+      "kindDetail": "quest"
+    },
+    {
+      "key": "quest-33",
+      "title": "Видеоурок: Эзлор Солюшн Таблетс",
+      "kind": "quests",
+      "description": "Пройдите урок и узнайте, как развивается аллергическая реакция, как можно ее предотвратить, про особенности формы выпуска апрепарата и кому можно его порекомендовать",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 1,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровой каталог квестов и материалов",
+      "notes": "В исходном каталоге указан номинал 1 монета; в отдельном разделе «Кристаллы» не показывается.",
+      "image": "",
+      "tags": [
+        "Каталог квестов",
+        "Внешний материал"
+      ],
+      "url": "https://www.pharmskills.ru/services/videouroki/ezlor-solyushn-tablets-video/",
+      "pharmacy": 2,
+      "target": false,
+      "legacyCoins": 1,
+      "kindDetail": "quest"
+    },
+    {
+      "key": "quest-34",
+      "title": "Интерактивный тренажёр Неврология",
+      "kind": "quests",
+      "description": "Получите инъекцию знаний по неврологии: патологиям, причинам, симптомам и препаратам",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 1,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровой каталог квестов и материалов",
+      "notes": "В исходном каталоге указан номинал 1 монета; в отдельном разделе «Кристаллы» не показывается.",
+      "image": "",
+      "tags": [
+        "Каталог квестов",
+        "Внешний материал"
+      ],
+      "url": "https://activer.fun/ru/farmatsevtika/nervnaya-sistema-nevrologiya/",
+      "pharmacy": 2,
+      "target": false,
+      "legacyCoins": 1,
+      "kindDetail": "quest"
+    },
+    {
+      "key": "quest-35",
+      "title": "Тест: Нетугаст - Средство для лечения функциональных нарушений ЖКТ",
+      "kind": "quests",
+      "description": "Проверьте, насколько хорошо вы знаете препарат",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 1,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровой каталог квестов и материалов",
+      "notes": "В исходном каталоге указан номинал 1 монета; в отдельном разделе «Кристаллы» не показывается.",
+      "image": "",
+      "tags": [
+        "Каталог квестов",
+        "Внешний материал"
+      ],
+      "url": "https://www.pharmskills.ru/services/testy-po-preparatam/netugast-test/",
+      "pharmacy": 2,
+      "target": false,
+      "legacyCoins": 1,
+      "kindDetail": "quest"
+    },
+    {
+      "key": "quest-36",
+      "title": "Интерактивный тренажёр Терапия",
+      "kind": "quests",
+      "description": "Получите инъекцию знаний по терапии: патологиям, причинам, симптомам и препаратам",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 1,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровой каталог квестов и материалов",
+      "notes": "В исходном каталоге указан номинал 1 монета; в отдельном разделе «Кристаллы» не показывается.",
+      "image": "",
+      "tags": [
+        "Каталог квестов",
+        "Внешний материал"
+      ],
+      "url": "https://activer.fun/ru/farmatsevtika/stress-bessonnitsa-golovnaya-bol/",
+      "pharmacy": 2,
+      "target": false,
+      "legacyCoins": 1,
+      "kindDetail": "quest"
+    },
+    {
+      "key": "quest-37",
+      "title": "Подкаст: Инвентаризация в аптеке: порядок, особенности и ответственность",
+      "kind": "quests",
+      "description": "Узнайте за 6 минут, в каких случаях закон обязывает провести инвентаризацию, как правильно оформить расхождения и кто заплатит за пропавшие лекарства",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 1,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игровой каталог квестов и материалов",
+      "notes": "В исходном каталоге указан номинал 1 монета; в отдельном разделе «Кристаллы» не показывается.",
+      "image": "",
+      "tags": [
+        "Каталог квестов",
+        "Внешний материал"
+      ],
+      "url": "https://www.pharmskills.ru/services/podkasty/inventarizatsiya-v-apteke-poryadok-osobennosti-i-otvetstvennost/",
+      "pharmacy": 2,
+      "target": false,
+      "legacyCoins": 1,
+      "kindDetail": "quest"
+    },
+    {
+      "key": "task-1",
+      "title": "Задание 1 · аптека №1",
+      "kind": "tasks",
+      "description": "Сыграйте в игру «Пролети через дозатор»",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 60,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Задания аптек",
+      "notes": "Награда задания по API; доступность определяется уровнем аптеки. ",
+      "image": "",
+      "tags": [
+        "Задание",
+        "Уровень аптеки 0"
+      ],
+      "pharmacy": 1,
+      "goals": [
+        "Сыграйте в игру «Пролети через дозатор»"
+      ]
+    },
+    {
+      "key": "task-2",
+      "title": "Задание 2 · аптека №1",
+      "kind": "tasks",
+      "description": "Пройдите «Зума: цепочка пилюль» (замена квеста «Первая аптека» в DEV)",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 120,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Задания аптек",
+      "notes": "Награда задания по API; доступность определяется уровнем аптеки. ",
+      "image": "",
+      "tags": [
+        "Задание",
+        "Уровень аптеки 0"
+      ],
+      "pharmacy": 1,
+      "goals": [
+        "Пройдите «Зума: цепочка пилюль» (замена квеста «Первая аптека» в DEV)"
+      ]
+    },
+    {
+      "key": "task-3",
+      "title": "Задание 3 · аптека №1",
+      "kind": "tasks",
+      "description": "Помогите покупателю подобрать гепатопротекторные и желчегонные препараты; Прокачай свою аптеку еще на одну звезду",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 120,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Задания аптек",
+      "notes": "Награда задания по API; доступность определяется уровнем аптеки. ",
+      "image": "",
+      "tags": [
+        "Задание",
+        "Уровень аптеки 0"
+      ],
+      "pharmacy": 1,
+      "goals": [
+        "Помогите покупателю подобрать гепатопротекторные и желчегонные препараты",
+        "Прокачай свою аптеку еще на одну звезду"
+      ]
+    },
+    {
+      "key": "task-4",
+      "title": "Задание 4 · аптека №1",
+      "kind": "tasks",
+      "description": "Сыграйте в игру «Рогатка против бактерий»; Пройдите тест «Противовирусные препараты»",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 180,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Задания аптек",
+      "notes": "Награда задания по API; доступность определяется уровнем аптеки. Дополнительно +1 уровень фармацевта.",
+      "image": "",
+      "tags": [
+        "Задание",
+        "Уровень аптеки 1"
+      ],
+      "pharmacy": 1,
+      "goals": [
+        "Сыграйте в игру «Рогатка против бактерий»",
+        "Пройдите тест «Противовирусные препараты»"
+      ]
+    },
+    {
+      "key": "task-5",
+      "title": "Задание 5 · аптека №1",
+      "kind": "tasks",
+      "description": "Посмотрите вебинар «Безрецептурные иммуномодуляторы: профиль безопасности, противопоказания и важные аспекты информирования»; Сыграйте в игру «Перебеги ленты»",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 220,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Задания аптек",
+      "notes": "Награда задания по API; доступность определяется уровнем аптеки. Дополнительно +1 уровень фармацевта.",
+      "image": "",
+      "tags": [
+        "Задание",
+        "Уровень аптеки 2"
+      ],
+      "pharmacy": 1,
+      "goals": [
+        "Посмотрите вебинар «Безрецептурные иммуномодуляторы: профиль безопасности, противопоказания и важные аспекты информирования»",
+        "Сыграйте в игру «Перебеги ленты»"
+      ]
+    },
+    {
+      "key": "task-6",
+      "title": "Задание 6 · аптека №1",
+      "kind": "tasks",
+      "description": "Помогите себе сами - вас укусил клещ; Прочитайте статью «Особенности информирования при отпуске препаратов для лечения сердечно-сосудистых заболеваний и практические рекомендации фармацевтам»",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 240,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Задания аптек",
+      "notes": "Награда задания по API; доступность определяется уровнем аптеки. Дополнительно +1 уровень фармацевта.",
+      "image": "",
+      "tags": [
+        "Задание",
+        "Уровень аптеки 2"
+      ],
+      "pharmacy": 1,
+      "goals": [
+        "Помогите себе сами - вас укусил клещ",
+        "Прочитайте статью «Особенности информирования при отпуске препаратов для лечения сердечно-сосудистых заболеваний и практические рекомендации фармацевтам»"
+      ]
+    },
+    {
+      "key": "task-7",
+      "title": "Задание 7 · аптека №1",
+      "kind": "tasks",
+      "description": "Пройдите квест «Тайны древних аптек»; Пройдите видеоурок «Круоксабан»",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 320,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Задания аптек",
+      "notes": "Награда задания по API; доступность определяется уровнем аптеки. ",
+      "image": "",
+      "tags": [
+        "Задание",
+        "Уровень аптеки 3"
+      ],
+      "pharmacy": 1,
+      "goals": [
+        "Пройдите квест «Тайны древних аптек»",
+        "Пройдите видеоурок «Круоксабан»"
+      ]
+    },
+    {
+      "key": "task-8",
+      "title": "Задание 8 · аптека №1",
+      "kind": "tasks",
+      "description": "Помогите продать тонометр покупателю (Тонометр-1) ;  Прослушайте подкаст «Если человеку стало плохо: как оказать первую помощь в аптеке, не нарушив закон»",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 380,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Задания аптек",
+      "notes": "Награда задания по API; доступность определяется уровнем аптеки. Дополнительно +1 уровень фармацевта.",
+      "image": "",
+      "tags": [
+        "Задание",
+        "Уровень аптеки 3"
+      ],
+      "pharmacy": 1,
+      "goals": [
+        "Помогите продать тонометр покупателю (Тонометр-1) ",
+        " Прослушайте подкаст «Если человеку стало плохо: как оказать первую помощь в аптеке, не нарушив закон»"
+      ]
+    },
+    {
+      "key": "task-9",
+      "title": "Задание 9 · аптека №1",
+      "kind": "tasks",
+      "description": "Сыграйте в игру «Прыжки по полкам»; Пройдите тест  «Препарат для лечения мигрени Цефалотриптан»",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 480,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Задания аптек",
+      "notes": "Награда задания по API; доступность определяется уровнем аптеки. ",
+      "image": "",
+      "tags": [
+        "Задание",
+        "Уровень аптеки 4"
+      ],
+      "pharmacy": 1,
+      "goals": [
+        "Сыграйте в игру «Прыжки по полкам»",
+        "Пройдите тест  «Препарат для лечения мигрени Цефалотриптан»"
+      ]
+    },
+    {
+      "key": "task-10",
+      "title": "Задание 10 · аптека №1",
+      "kind": "tasks",
+      "description": "Примите возврат тонометра у покупателя (Тонометр-2); Посмотрите вебинар «Современный подход к купированию приступов мигрени: элетриптан и другие молекулы»",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 500,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Задания аптек",
+      "notes": "Награда задания по API; доступность определяется уровнем аптеки. Дополнительно +1 уровень фармацевта.",
+      "image": "",
+      "tags": [
+        "Задание",
+        "Уровень аптеки 5"
+      ],
+      "pharmacy": 1,
+      "goals": [
+        "Примите возврат тонометра у покупателя (Тонометр-2)",
+        "Посмотрите вебинар «Современный подход к купированию приступов мигрени: элетриптан и другие молекулы»"
+      ]
+    },
+    {
+      "key": "task-12",
+      "title": "Задание 1 · аптека №2",
+      "kind": "tasks",
+      "description": "Сыграйте в игру «Расставь на полку»",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 40,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Задания аптек",
+      "notes": "Награда задания по API; доступность определяется уровнем аптеки. ",
+      "image": "",
+      "tags": [
+        "Задание",
+        "Уровень аптеки 0"
+      ],
+      "pharmacy": 2,
+      "goals": [
+        "Сыграйте в игру «Расставь на полку»"
+      ]
+    },
+    {
+      "key": "task-13",
+      "title": "Задание 2 · аптека №2",
+      "kind": "tasks",
+      "description": "Посетите вебинар: Ступенчатая терапия мигрени: от простого к сложному.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 50,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Задания аптек",
+      "notes": "Награда задания по API; доступность определяется уровнем аптеки. ",
+      "image": "",
+      "tags": [
+        "Задание",
+        "Уровень аптеки 0"
+      ],
+      "pharmacy": 2,
+      "goals": [
+        "Посетите вебинар: Ступенчатая терапия мигрени: от простого к сложному."
+      ]
+    },
+    {
+      "key": "task-14",
+      "title": "Задание 3 · аптека №2",
+      "kind": "tasks",
+      "description": "Пройдите интерактивный тренажёр Кардиология; Пройдите тест: Препарат для лечения мигрени Цефалотриптан",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 150,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Задания аптек",
+      "notes": "Награда задания по API; доступность определяется уровнем аптеки. ",
+      "image": "",
+      "tags": [
+        "Задание",
+        "Уровень аптеки 1"
+      ],
+      "pharmacy": 2,
+      "goals": [
+        "Пройдите интерактивный тренажёр Кардиология",
+        "Пройдите тест: Препарат для лечения мигрени Цефалотриптан"
+      ]
+    },
+    {
+      "key": "task-15",
+      "title": "Задание 4 · аптека №2",
+      "kind": "tasks",
+      "description": "Сыграйте в игру «Зума: цепочка пилюль»; Пройдите интерактивный тренажёр Флебология",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 250,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Задания аптек",
+      "notes": "Награда задания по API; доступность определяется уровнем аптеки. Дополнительно +1 уровень фармацевта.",
+      "image": "",
+      "tags": [
+        "Задание",
+        "Уровень аптеки 1"
+      ],
+      "pharmacy": 2,
+      "goals": [
+        "Сыграйте в игру «Зума: цепочка пилюль»",
+        "Пройдите интерактивный тренажёр Флебология"
+      ]
+    },
+    {
+      "key": "task-16",
+      "title": "Задание 5 · аптека №2",
+      "kind": "tasks",
+      "description": "Посетите вебинар: Новая эра в терапии эректильной дисфункции. Как стать экспертом для посетителей аптек; Пройдите интерактивный тренажёр Дерматология",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 300,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Задания аптек",
+      "notes": "Награда задания по API; доступность определяется уровнем аптеки. ",
+      "image": "",
+      "tags": [
+        "Задание",
+        "Уровень аптеки 2"
+      ],
+      "pharmacy": 2,
+      "goals": [
+        "Посетите вебинар: Новая эра в терапии эректильной дисфункции. Как стать экспертом для посетителей аптек",
+        "Пройдите интерактивный тренажёр Дерматология"
+      ]
+    },
+    {
+      "key": "task-17",
+      "title": "Задание 6 · аптека №2",
+      "kind": "tasks",
+      "description": "Сыграйте в игру «Раздвинь коробки»; Пройдите интерактивный тренажёр Гастроэнтерология",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 300,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Задания аптек",
+      "notes": "Награда задания по API; доступность определяется уровнем аптеки. Дополнительно +1 уровень фармацевта.",
+      "image": "",
+      "tags": [
+        "Задание",
+        "Уровень аптеки 2"
+      ],
+      "pharmacy": 2,
+      "goals": [
+        "Сыграйте в игру «Раздвинь коробки»",
+        "Пройдите интерактивный тренажёр Гастроэнтерология"
+      ]
+    },
+    {
+      "key": "task-18",
+      "title": "Задание 7 · аптека №2",
+      "kind": "tasks",
+      "description": "Посетите вебинар: Аптека: почему нам не нравится там работать?; Пройдите интерактивный тренажёр Урология",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 300,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Задания аптек",
+      "notes": "Награда задания по API; доступность определяется уровнем аптеки. Дополнительно +1 уровень фармацевта.",
+      "image": "",
+      "tags": [
+        "Задание",
+        "Уровень аптеки 3"
+      ],
+      "pharmacy": 2,
+      "goals": [
+        "Посетите вебинар: Аптека: почему нам не нравится там работать?",
+        "Пройдите интерактивный тренажёр Урология"
+      ]
+    },
+    {
+      "key": "task-19",
+      "title": "Задание 8 · аптека №2",
+      "kind": "tasks",
+      "description": "Пройдите видеоурок Эзлор Солюшн Таблетс; Пройдите интерактивный тренажёр Неврология",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 350,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Задания аптек",
+      "notes": "Награда задания по API; доступность определяется уровнем аптеки. ",
+      "image": "",
+      "tags": [
+        "Задание",
+        "Уровень аптеки 3"
+      ],
+      "pharmacy": 2,
+      "goals": [
+        "Пройдите видеоурок Эзлор Солюшн Таблетс",
+        "Пройдите интерактивный тренажёр Неврология"
+      ]
+    },
+    {
+      "key": "task-20",
+      "title": "Задание 9 · аптека №2",
+      "kind": "tasks",
+      "description": "Сыграйте в игру «Выпиши рецепт»; Пройдите тест: Нетугаст - Средство для лечения функциональных нарушений ЖКТ",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 450,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Задания аптек",
+      "notes": "Награда задания по API; доступность определяется уровнем аптеки. Дополнительно +1 уровень фармацевта.",
+      "image": "",
+      "tags": [
+        "Задание",
+        "Уровень аптеки 4"
+      ],
+      "pharmacy": 2,
+      "goals": [
+        "Сыграйте в игру «Выпиши рецепт»",
+        "Пройдите тест: Нетугаст - Средство для лечения функциональных нарушений ЖКТ"
+      ]
+    },
+    {
+      "key": "task-21",
+      "title": "Задание 10 · аптека №2",
+      "kind": "tasks",
+      "description": "Пройдите интерактивный тренажёр Терапия; Послушайте подкаст: Инвентаризация в аптеке: порядок, особенности и ответственность",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 500,
+      "status": "task",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Задания аптек",
+      "notes": "Награда задания по API; доступность определяется уровнем аптеки. Дополнительно +1 уровень фармацевта.",
+      "image": "",
+      "tags": [
+        "Задание",
+        "Уровень аптеки 5"
+      ],
+      "pharmacy": 2,
+      "goals": [
+        "Пройдите интерактивный тренажёр Терапия",
+        "Послушайте подкаст: Инвентаризация в аптеке: порядок, особенности и ответственность"
+      ]
+    },
+    {
+      "key": "upgrade-7",
+      "title": "Цветы",
+      "kind": "upgrades",
+      "description": "Повышают уют в торговом зале",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 200,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Стартовая цена для аптеки без улучшений. По мере покупок увеличивается; базовое число из API не равно текущей цене. Эффект: +5% дохода.",
+      "image": "assets/9675c23abc14.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №1"
+      ],
+      "pharmacy": 1,
+      "basePrice": true,
+      "originalTitle": "Цветы"
+    },
+    {
+      "key": "upgrade-8",
+      "title": "Улучшенная вентиляция",
+      "kind": "upgrades",
+      "description": "Обновляет вентиляцию торгового зала.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 260,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Стартовая цена для аптеки без улучшений. По мере покупок увеличивается; базовое число из API не равно текущей цене. Эффект: +7% дохода.",
+      "image": "assets/a118c9955c3a.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №1"
+      ],
+      "pharmacy": 1,
+      "basePrice": true,
+      "originalTitle": "УФ-облучатели"
+    },
+    {
+      "key": "upgrade-9",
+      "title": "Диван в торговый зал",
+      "kind": "upgrades",
+      "description": "Повышает комфорт для покупателей",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 340,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Стартовая цена для аптеки без улучшений. По мере покупок увеличивается; базовое число из API не равно текущей цене. Эффект: +8% дохода.",
+      "image": "assets/a25c4d11dd3e.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №1"
+      ],
+      "pharmacy": 1,
+      "basePrice": true,
+      "originalTitle": "Диван в торговый зал"
+    },
+    {
+      "key": "upgrade-10",
+      "title": "Новая форма для сотрудников",
+      "kind": "upgrades",
+      "description": "Повышает опрятность персонала и доверие покупателей",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 420,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Стартовая цена для аптеки без улучшений. По мере покупок увеличивается; базовое число из API не равно текущей цене. Эффект: +10% дохода.",
+      "image": "assets/017850fc9f6d.svg",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №1"
+      ],
+      "pharmacy": 1,
+      "basePrice": true,
+      "originalTitle": "Повышает комфорт для персонала и радует покупателей"
+    },
+    {
+      "key": "upgrade-11",
+      "title": "Кулер для посетителей",
+      "kind": "upgrades",
+      "description": "Питьевая вода и одноразовые стаканчики в зоне ожидания.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 500,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Стартовая цена для аптеки без улучшений. По мере покупок увеличивается; базовое число из API не равно текущей цене. Эффект: +12% дохода.",
+      "image": "assets/efce1436650f.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №1"
+      ],
+      "pharmacy": 1,
+      "basePrice": true,
+      "originalTitle": "Обучающий курс для сотрудников"
+    },
+    {
+      "key": "upgrade-12",
+      "title": "Детский уголок",
+      "kind": "upgrades",
+      "description": "Привлекает покупателей с детьми",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 600,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Стартовая цена для аптеки без улучшений. По мере покупок увеличивается; базовое число из API не равно текущей цене. Эффект: +10% дохода.",
+      "image": "assets/92262415e8c7.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №1"
+      ],
+      "pharmacy": 1,
+      "basePrice": true,
+      "originalTitle": "Детский уголок"
+    },
+    {
+      "key": "upgrade-13",
+      "title": "Новый компьютер",
+      "kind": "upgrades",
+      "description": "Работать станет удобнее, больше не придется ждать бесконечных загрузок, ведь новый компьютер в разы быстрее старого.",
+      "currency": "crystals",
+      "direction": "spend",
+      "amount": 20,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Фиксированная цена в кристаллах. Эффект: +30% дохода.",
+      "image": "assets/012515882884.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №1"
+      ],
+      "pharmacy": 1,
+      "basePrice": false,
+      "originalTitle": "Расширение ассортимента"
+    },
+    {
+      "key": "upgrade-14",
+      "title": "Часы в торговый зал",
+      "kind": "upgrades",
+      "description": "Повышает прибыльность аптеки",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 740,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Стартовая цена для аптеки без улучшений. По мере покупок увеличивается; базовое число из API не равно текущей цене. Эффект: +14% дохода.",
+      "image": "assets/f4787fd4e132.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №1"
+      ],
+      "pharmacy": 1,
+      "basePrice": true,
+      "originalTitle": "Неоновая вывеска"
+    },
+    {
+      "key": "upgrade-15",
+      "title": "Новое оформление зала",
+      "kind": "upgrades",
+      "description": "Радует покупателей и повышает средний чек",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 900,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Стартовая цена для аптеки без улучшений. По мере покупок увеличивается; базовое число из API не равно текущей цене. Эффект: +16% дохода.",
+      "image": "assets/f52b95af7c89.svg",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №1"
+      ],
+      "pharmacy": 1,
+      "basePrice": true,
+      "originalTitle": "Новое оформление зала"
+    },
+    {
+      "key": "upgrade-16",
+      "title": "Кофемашина для сотрудников",
+      "kind": "upgrades",
+      "description": "Повышает комфорт и лояльность персонала",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 1100,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Стартовая цена для аптеки без улучшений. По мере покупок увеличивается; базовое число из API не равно текущей цене. Эффект: +15% дохода.",
+      "image": "assets/4455218a0277.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №1"
+      ],
+      "pharmacy": 1,
+      "basePrice": true,
+      "originalTitle": "Кофемашина для сотрудников"
+    },
+    {
+      "key": "upgrade-17",
+      "title": "Онлайн-заказ лекарств",
+      "kind": "upgrades",
+      "description": "Повышает прибыльность аптеки",
+      "currency": "crystals",
+      "direction": "spend",
+      "amount": 50,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Фиксированная цена в кристаллах. Эффект: +50% дохода.",
+      "image": "assets/7825d825106b.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №1"
+      ],
+      "pharmacy": 1,
+      "basePrice": false,
+      "originalTitle": "Онлайн-заказ лекарств"
+    },
+    {
+      "key": "upgrade-18",
+      "title": "Рекламный экран у кассы",
+      "kind": "upgrades",
+      "description": "Привлекает внимание и повышает прибыльность аптеки",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 1300,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Стартовая цена для аптеки без улучшений. По мере покупок увеличивается; базовое число из API не равно текущей цене. Эффект: +20% дохода.",
+      "image": "assets/a75c55a65f39.svg",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №1"
+      ],
+      "pharmacy": 1,
+      "basePrice": true,
+      "originalTitle": "Рекламный экран у кассы"
+    },
+    {
+      "key": "upgrade-31",
+      "title": "Тонометр в торговый зал",
+      "kind": "upgrades",
+      "description": "Привлекает пожилых посетителей, повышает их лояльность",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 400,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Стартовая цена для аптеки без улучшений. По мере покупок увеличивается; базовое число из API не равно текущей цене. Эффект: +5% дохода.",
+      "image": "assets/ee5615934d40.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №2"
+      ],
+      "pharmacy": 2,
+      "basePrice": true,
+      "originalTitle": "Тонометр в торговый зал"
+    },
+    {
+      "key": "upgrade-32",
+      "title": "Бесплатный WiFi в зале",
+      "kind": "upgrades",
+      "description": "Поможет, если возникли сложности с мобильным интернетом",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 400,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Стартовая цена для аптеки без улучшений. По мере покупок увеличивается; базовое число из API не равно текущей цене. Эффект: +5% дохода.",
+      "image": "assets/18c62a6b2b9c.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №2"
+      ],
+      "pharmacy": 2,
+      "basePrice": true,
+      "originalTitle": "Бесплатный WiFi в зале"
+    },
+    {
+      "key": "upgrade-33",
+      "title": "Зарядка для телефонов",
+      "kind": "upgrades",
+      "description": "Поможет посетителям и задержит их подольше у витрины",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 400,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Стартовая цена для аптеки без улучшений. По мере покупок увеличивается; базовое число из API не равно текущей цене. Эффект: +5% дохода.",
+      "image": "assets/951a029e2ccf.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №2"
+      ],
+      "pharmacy": 2,
+      "basePrice": true,
+      "originalTitle": "Зарядка для телефонов"
+    },
+    {
+      "key": "upgrade-34",
+      "title": "Сбор пустых упаковок",
+      "kind": "upgrades",
+      "description": "Закрытый контейнер для сбора пустой упаковки от препаратов.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 400,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Стартовая цена для аптеки без улучшений. По мере покупок увеличивается; базовое число из API не равно текущей цене. Эффект: +5% дохода.",
+      "image": "assets/424d21f8ab0c.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №2"
+      ],
+      "pharmacy": 2,
+      "basePrice": true,
+      "originalTitle": "Большой телевизор в зал"
+    },
+    {
+      "key": "upgrade-35",
+      "title": "Умное освещение",
+      "kind": "upgrades",
+      "description": "Автоматически регулирует яркость, создаёт комфортную обстановку",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 400,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Стартовая цена для аптеки без улучшений. По мере покупок увеличивается; базовое число из API не равно текущей цене. Эффект: +5% дохода.",
+      "image": "assets/d8f5db3c7d67.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №2"
+      ],
+      "pharmacy": 2,
+      "basePrice": true,
+      "originalTitle": "Умное освещение"
+    },
+    {
+      "key": "upgrade-36",
+      "title": "Витрина с сезонными предложениями",
+      "kind": "upgrades",
+      "description": "Стимулирует импульсные покупки и повышает средний чек",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 400,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Стартовая цена для аптеки без улучшений. По мере покупок увеличивается; базовое число из API не равно текущей цене. Эффект: +5% дохода.",
+      "image": "assets/aa448118c2ad.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №2"
+      ],
+      "pharmacy": 2,
+      "basePrice": true,
+      "originalTitle": "Витрина с сезонными предложениями"
+    },
+    {
+      "key": "upgrade-37",
+      "title": "Бонусные карты для покупателей",
+      "kind": "upgrades",
+      "description": "Привлечёт больше постоянных покупателей и увеличит оборот",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 400,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Стартовая цена для аптеки без улучшений. По мере покупок увеличивается; базовое число из API не равно текущей цене. Эффект: +5% дохода.",
+      "image": "assets/304154aa48c1.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №2"
+      ],
+      "pharmacy": 2,
+      "basePrice": true,
+      "originalTitle": "Бонусные карты для покупателей"
+    },
+    {
+      "key": "upgrade-38",
+      "title": "Ширма для консультаций",
+      "kind": "upgrades",
+      "description": "Компактная ширма отделяет место для спокойного разговора с фармацевтом.",
+      "currency": "crystals",
+      "direction": "spend",
+      "amount": 35,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Фиксированная цена в кристаллах. Эффект: +40% дохода.",
+      "image": "assets/5adb5ec9a866.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №2"
+      ],
+      "pharmacy": 2,
+      "basePrice": false,
+      "originalTitle": "Тренинг с психологом для сотрудников"
+    },
+    {
+      "key": "upgrade-39",
+      "title": "Кулер для посетителей",
+      "kind": "upgrades",
+      "description": "Питьевая вода и одноразовые стаканчики в зоне ожидания.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 400,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Стартовая цена для аптеки без улучшений. По мере покупок увеличивается; базовое число из API не равно текущей цене. Эффект: +5% дохода.",
+      "image": "assets/efce1436650f.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №2"
+      ],
+      "pharmacy": 2,
+      "basePrice": true,
+      "originalTitle": "Комната отдыха для сотрудников"
+    },
+    {
+      "key": "upgrade-40",
+      "title": "Расширение ассортимента",
+      "kind": "upgrades",
+      "description": "Повысит средний чек и прибыльность аптеки",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 400,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Стартовая цена для аптеки без улучшений. По мере покупок увеличивается; базовое число из API не равно текущей цене. Эффект: +5% дохода.",
+      "image": "assets/f976e7b4a6d8.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №2"
+      ],
+      "pharmacy": 2,
+      "basePrice": true,
+      "originalTitle": "Расширение ассортимента"
+    },
+    {
+      "key": "upgrade-41",
+      "title": "Виртуальный консультант",
+      "kind": "upgrades",
+      "description": "Помогает покупателям находить нужные препараты",
+      "currency": "crystals",
+      "direction": "spend",
+      "amount": 50,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Фиксированная цена в кристаллах. Эффект: +50% дохода.",
+      "image": "assets/942d5a23b791.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №2"
+      ],
+      "pharmacy": 2,
+      "basePrice": false,
+      "originalTitle": "Виртуальный консультант"
+    },
+    {
+      "key": "upgrade-42",
+      "title": "Новая система складирования",
+      "kind": "upgrades",
+      "description": "Умные стеллажи поддерживают температуру",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 1520,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин улучшений аптеки",
+      "notes": "Стартовая цена для аптеки без улучшений. По мере покупок увеличивается; базовое число из API не равно текущей цене. Эффект: +18% дохода.",
+      "image": "assets/8a977aed0351.png",
+      "tags": [
+        "Улучшение аптеки",
+        "Аптека №2"
+      ],
+      "pharmacy": 2,
+      "basePrice": true,
+      "originalTitle": "Новая система складирования"
+    },
+    {
+      "key": "cat-bed",
+      "title": "Лежанка",
+      "kind": "pets",
+      "description": "Место отдыха кота.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 30,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин предметов для кота",
+      "notes": "Не повышает уровень аптеки. Может быть выдан как подарок за серию ежедневных заданий.",
+      "image": "assets/7cd97089915b.svg",
+      "tags": []
+    },
+    {
+      "key": "cat-scratch",
+      "title": "Когтеточка",
+      "kind": "pets",
+      "description": "Предмет для кота на полу аптеки.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 40,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин предметов для кота",
+      "notes": "Не повышает уровень аптеки. Может быть выдан как подарок за серию ежедневных заданий.",
+      "image": "assets/1398d68e828a.svg",
+      "tags": []
+    },
+    {
+      "key": "cat-pole",
+      "title": "Кошачий столбик",
+      "kind": "pets",
+      "description": "Кот забирается на верхнюю площадку.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 60,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Магазин предметов для кота",
+      "notes": "Не повышает уровень аптеки. Может быть выдан как подарок за серию ежедневных заданий.",
+      "image": "assets/23006843b542.svg",
+      "tags": []
+    },
+    {
+      "key": "stock-analgin",
+      "title": "Анальгин",
+      "kind": "stock",
+      "description": "Закупка партии из 10 единиц для полок аптеки.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 45,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Склад аптеки",
+      "notes": "Стартовая цена при базовом доходе 25 монет/мин. Растёт вместе с базовым доходом аптеки.",
+      "image": "assets/2d1edd15fcf1.svg",
+      "tags": [],
+      "basePrice": true
+    },
+    {
+      "key": "stock-vitamins",
+      "title": "Витамины",
+      "kind": "stock",
+      "description": "Закупка партии из 10 единиц для полок аптеки.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 75,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Склад аптеки",
+      "notes": "Стартовая цена при базовом доходе 25 монет/мин. Растёт вместе с базовым доходом аптеки.",
+      "image": "assets/646d21a9a257.svg",
+      "tags": [],
+      "basePrice": true
+    },
+    {
+      "key": "stock-cold",
+      "title": "Средства от простуды",
+      "kind": "stock",
+      "description": "Закупка партии из 10 единиц для полок аптеки.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 100,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Склад аптеки",
+      "notes": "Стартовая цена при базовом доходе 25 монет/мин. Растёт вместе с базовым доходом аптеки.",
+      "image": "assets/245aff864853.svg",
+      "tags": [],
+      "basePrice": true
+    },
+    {
+      "key": "stock-patch",
+      "title": "Пластыри",
+      "kind": "stock",
+      "description": "Закупка партии из 10 единиц для полок аптеки.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 30,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Склад аптеки",
+      "notes": "Стартовая цена при базовом доходе 25 монет/мин. Растёт вместе с базовым доходом аптеки.",
+      "image": "assets/de22d61f5424.svg",
+      "tags": [],
+      "basePrice": true
+    },
+    {
+      "key": "stock-bandage",
+      "title": "Бинты, вата",
+      "kind": "stock",
+      "description": "Закупка партии из 10 единиц для полок аптеки.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 20,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Склад аптеки",
+      "notes": "Стартовая цена при базовом доходе 25 монет/мин. Растёт вместе с базовым доходом аптеки.",
+      "image": "assets/fdfd9fc357c1.svg",
+      "tags": [],
+      "basePrice": true
+    },
+    {
+      "key": "stock-allergy",
+      "title": "Средства от аллергии",
+      "kind": "stock",
+      "description": "Закупка партии из 10 единиц для полок аптеки.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 80,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Склад аптеки",
+      "notes": "Стартовая цена при базовом доходе 25 монет/мин. Растёт вместе с базовым доходом аптеки.",
+      "image": "assets/be7921d73c52.svg",
+      "tags": [],
+      "basePrice": true
+    },
+    {
+      "key": "city-0",
+      "title": "Аптека №2 · park",
+      "kind": "city",
+      "description": "Покупка городской точки для собственной аптечной сети.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 3000,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Цена привязана к конкретному адресу, а не очередности покупки. Координаты: 172, 66. Для работы нужны заведующий и фармацевт.",
+      "image": "assets/2e80344e9e4b.png",
+      "tags": [
+        "Аптека на карте"
+      ]
+    },
+    {
+      "key": "city-1",
+      "title": "Аптека №3 · park",
+      "kind": "city",
+      "description": "Покупка городской точки для собственной аптечной сети.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 4700,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Цена привязана к конкретному адресу, а не очередности покупки. Координаты: -279, 380. Для работы нужны заведующий и фармацевт.",
+      "image": "assets/2e80344e9e4b.png",
+      "tags": [
+        "Аптека на карте"
+      ]
+    },
+    {
+      "key": "city-2",
+      "title": "Аптека №4 · outskirts",
+      "kind": "city",
+      "description": "Покупка городской точки для собственной аптечной сети.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 7300,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Цена привязана к конкретному адресу, а не очередности покупки. Координаты: 1425, 69. Для работы нужны заведующий и фармацевт.",
+      "image": "assets/2e80344e9e4b.png",
+      "tags": [
+        "Аптека на карте"
+      ]
+    },
+    {
+      "key": "city-3",
+      "title": "Аптека №5 · outskirts",
+      "kind": "city",
+      "description": "Покупка городской точки для собственной аптечной сети.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 11200,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Цена привязана к конкретному адресу, а не очередности покупки. Координаты: 927, 198. Для работы нужны заведующий и фармацевт.",
+      "image": "assets/2e80344e9e4b.png",
+      "tags": [
+        "Аптека на карте"
+      ]
+    },
+    {
+      "key": "city-4",
+      "title": "Аптека №6 · outskirts",
+      "kind": "city",
+      "description": "Покупка городской точки для собственной аптечной сети.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 17400,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Цена привязана к конкретному адресу, а не очередности покупки. Координаты: 1512, 363. Для работы нужны заведующий и фармацевт.",
+      "image": "assets/2e80344e9e4b.png",
+      "tags": [
+        "Аптека на карте"
+      ]
+    },
+    {
+      "key": "city-5",
+      "title": "Аптека №7 · outskirts",
+      "kind": "city",
+      "description": "Покупка городской точки для собственной аптечной сети.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 26900,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Цена привязана к конкретному адресу, а не очередности покупки. Координаты: 690, 564. Для работы нужны заведующий и фармацевт.",
+      "image": "assets/6d9f84ace0d1.png",
+      "tags": [
+        "Аптека на карте"
+      ]
+    },
+    {
+      "key": "city-6",
+      "title": "Аптека №8 · outskirts",
+      "kind": "city",
+      "description": "Покупка городской точки для собственной аптечной сети.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 41700,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Цена привязана к конкретному адресу, а не очередности покупки. Координаты: 415, 805. Для работы нужны заведующий и фармацевт.",
+      "image": "assets/6d9f84ace0d1.png",
+      "tags": [
+        "Аптека на карте"
+      ]
+    },
+    {
+      "key": "city-7",
+      "title": "Аптека №9 · avenue",
+      "kind": "city",
+      "description": "Покупка городской точки для собственной аптечной сети.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 64500,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Цена привязана к конкретному адресу, а не очередности покупки. Координаты: 1329, 318. Для работы нужны заведующий и фармацевт.",
+      "image": "assets/2e80344e9e4b.png",
+      "tags": [
+        "Аптека на карте"
+      ]
+    },
+    {
+      "key": "city-8",
+      "title": "Аптека №10 · город",
+      "kind": "city",
+      "description": "Покупка городской точки для собственной аптечной сети.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 100000,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Цена привязана к конкретному адресу, а не очередности покупки. Координаты: 710, 335. Для работы нужны заведующий и фармацевт.",
+      "image": "assets/957181347352.png",
+      "tags": [
+        "Аптека на карте"
+      ]
+    },
+    {
+      "key": "city-9",
+      "title": "Аптека №11 · город",
+      "kind": "city",
+      "description": "Покупка городской точки для собственной аптечной сети.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 155000,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Цена привязана к конкретному адресу, а не очередности покупки. Координаты: 1244, 495. Для работы нужны заведующий и фармацевт.",
+      "image": "assets/2e80344e9e4b.png",
+      "tags": [
+        "Аптека на карте"
+      ]
+    },
+    {
+      "key": "city-10",
+      "title": "Аптека №12 · город",
+      "kind": "city",
+      "description": "Покупка городской точки для собственной аптечной сети.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 240200,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Цена привязана к конкретному адресу, а не очередности покупки. Координаты: 989, 555. Для работы нужны заведующий и фармацевт.",
+      "image": "assets/10a7a2f04ae3.png",
+      "tags": [
+        "Аптека на карте"
+      ]
+    },
+    {
+      "key": "city-11",
+      "title": "Аптека №13 · город",
+      "kind": "city",
+      "description": "Покупка городской точки для собственной аптечной сети.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 372200,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Цена привязана к конкретному адресу, а не очередности покупки. Координаты: 199, 747. Для работы нужны заведующий и фармацевт.",
+      "image": "assets/957181347352.png",
+      "tags": [
+        "Аптека на карте"
+      ]
+    },
+    {
+      "key": "city-12",
+      "title": "Аптека №14 · square",
+      "kind": "city",
+      "description": "Покупка городской точки для собственной аптечной сети.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 577000,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Цена привязана к конкретному адресу, а не очередности покупки. Координаты: 705, 169. Для работы нужны заведующий и фармацевт.",
+      "image": "assets/2e80344e9e4b.png",
+      "tags": [
+        "Аптека на карте"
+      ]
+    },
+    {
+      "key": "estate-0",
+      "title": "Аптека на Приокской, 4",
+      "kind": "estate",
+      "description": "Помещение 60 м². Течёт крыша, проводка требует замены, окно заколочено. Место проходное: рядом поликлиника.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 4100,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 490, аренда 75 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-1",
+      "title": "Аптека у Московского вокзала",
+      "kind": "estate",
+      "description": "После пожара. Дёшево. Поток огромный, но ремонт — с нуля, включая полы.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 2300,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 280, аренда 40 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-2",
+      "title": "Аптека в Заречье",
+      "kind": "estate",
+      "description": "Бывший магазин. Стены целы, нужен ремонт пола и витрины. Спальный район, поток вечерами.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 3300,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 400, аренда 60 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-3",
+      "title": "Угловое помещение на Покровской",
+      "kind": "estate",
+      "description": "Центр, огромный поток, окна на две стороны. Состояние хорошее — и цена соответствует.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 11500,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 1380, аренда 210 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-4",
+      "title": "Киоск в переходе на площади Горького",
+      "kind": "estate",
+      "description": "Крошечный, зато свой. Витрина треснула, света нет. Поток — весь город мимо.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 1400,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. ",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-5",
+      "title": "Аптека на Варварской",
+      "kind": "estate",
+      "description": "Высокие потолки, окна во двор. Придётся делить вход с соседом.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 5100,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 610, аренда 95 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-6",
+      "title": "Аптека на Автозаводе",
+      "kind": "estate",
+      "description": "Большая, светлая, рядом проходная завода. Утром очередь, вечером пусто. Нужен ремонт стойки.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 6200,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 740, аренда 115 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-7",
+      "title": "Аптека на Малой Покровской",
+      "kind": "estate",
+      "description": "Дёшево, потому что с улицы не видно. Придётся вкладываться в вывеску.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 1700,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 200, аренда 30 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-8",
+      "title": "Аптека у больницы №5",
+      "kind": "estate",
+      "description": "Лучшее место в городе и самая высокая цена. Внутри — только стены и старая проводка.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 13700,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 1640, аренда 250 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-9",
+      "title": "Помещение на Сортировке",
+      "kind": "estate",
+      "description": "Окраина, поток небольшой, зато почти даром и крыша целая.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 1300,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 160, аренда 25 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-10",
+      "title": "Помещение в аэропорту острова",
+      "kind": "estate",
+      "description": "Первое, что видит турист после трапа. Аренда терминала не дешёвая, зато мимо не пройдёт никто.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 18500,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 2220, аренда 335 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-11",
+      "title": "Две смежные комнаты на Ковалихе",
+      "kind": "estate",
+      "description": "Можно объединить в большой зал. Стену придётся ломать, разрешение получено.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 7400,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 890, аренда 135 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-12",
+      "title": "Аптечный пункт при общежитии",
+      "kind": "estate",
+      "description": "Маленький, но с постоянными покупателями. Требует замены полок и окна.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 2500,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 300, аренда 45 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-13",
+      "title": "Аптека на Родионова",
+      "kind": "estate",
+      "description": "Работающая точка с оборудованием. Хозяин уезжает, продаёт быстро и с торгом.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 9600,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. ",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-14",
+      "title": "Аптека на Артельной",
+      "kind": "estate",
+      "description": "Сухой, тёплый, но без окон. Под склад — идеально, под торговый зал — спорно.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 2800,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 340, аренда 50 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-15",
+      "title": "Аптека на Щербинках",
+      "kind": "estate",
+      "description": "Закрылась после проверки. Оборудование на месте, репутацию придётся возвращать самому.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 3700,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. ",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-16",
+      "title": "Аптека в торговых рядах на Алексеевской",
+      "kind": "estate",
+      "description": "Аренда мест вокруг дорогая, зато поток круглый день. Ремонт косметический.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 6500,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 780, аренда 120 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-17",
+      "title": "Аптека на Гордеевской",
+      "kind": "estate",
+      "description": "Рядом рынок и остановка. Внутри сыро, нужен пол и вытяжка. Хозяин торопится продать.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 4900,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 590, аренда 90 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-18",
+      "title": "Аптека на Голованова",
+      "kind": "estate",
+      "description": "Отдельный вход со двора, окна низко. Дёшево, но вывеску видно только вблизи.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 2100,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 250, аренда 40 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-19",
+      "title": "Аптека в Сормове",
+      "kind": "estate",
+      "description": "Старая точка с постоянными покупателями. Оборудование изношено, вывеска выцвела.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 5600,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 670, аренда 100 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-20",
+      "title": "Аптека на Юбилейном бульваре",
+      "kind": "estate",
+      "description": "Чистовая отделка, всё новое. Район заселён на треть — покупатели появятся не сразу.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 8300,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 1000, аренда 150 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-21",
+      "title": "Лавка у пляжа",
+      "kind": "estate",
+      "description": "Домик прямо у променада: солнце, очередь за кремом от загара и пластырями. Товар возят самолётом.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 9800,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 1180, аренда 180 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-22",
+      "title": "Аптека на Мещерском бульваре",
+      "kind": "estate",
+      "description": "Первый этаж, большие окна, плотная застройка вокруг. Требуется ремонт стойки и полок.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 7100,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 850, аренда 130 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-23",
+      "title": "Аптека на Пушкина",
+      "kind": "estate",
+      "description": "Зеркала и кресла вывезут. Планировка неудобная: длинный узкий зал.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 3000,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 360, аренда 55 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-24",
+      "title": "Аптека при поликлинике №7",
+      "kind": "estate",
+      "description": "Проходное место, очередь весь день. Помещение маленькое, склад — фактически шкаф.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 11200,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 1340, аренда 205 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-25",
+      "title": "Точка на Молитовке",
+      "kind": "estate",
+      "description": "Спальный район, вечерний поток. Крыша течёт в двух местах, окно требует замены.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 3400,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 410, аренда 60 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-26",
+      "title": "Аптека на Канавинской",
+      "kind": "estate",
+      "description": "Рядом вокзал и рынок. Поток огромный и беспокойный. Нужна новая витрина и решётки.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 6600,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 790, аренда 120 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-27",
+      "title": "Половина магазина на Дубравной",
+      "kind": "estate",
+      "description": "Соседи — продукты, поток общий. Придётся делить вход и договариваться о вывеске.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 4200,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 500, аренда 75 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-28",
+      "title": "Аптека у парка Швейцария",
+      "kind": "estate",
+      "description": "Летом поток отличный, зимой пусто. Внутри всё цело, нужна только вывеска.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 5700,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 680, аренда 105 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-29",
+      "title": "Киоск у пляжа на Гребном",
+      "kind": "estate",
+      "description": "Работает четыре месяца в году. Дёшево ровно поэтому.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 1600,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 190, аренда 30 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-30",
+      "title": "Аптека на Верхних Печёрах",
+      "kind": "estate",
+      "description": "Новый район, молодые семьи, детские товары идут отлично. Помещение без отделки.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 8800,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 1060, аренда 160 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-31",
+      "title": "Угловое на Белинского",
+      "kind": "estate",
+      "description": "Оживлённый перекрёсток, шум и пыль. Внутри требуется всё, кроме стен.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 5100,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 610, аренда 95 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-32",
+      "title": "Аптека на Большой Покровской",
+      "kind": "estate",
+      "description": "Съезжают из-за аренды. Оборудование остаётся, поток лучший в городе, расходы тоже.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 12700,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. ",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-33",
+      "title": "Точка в Кузнечихе",
+      "kind": "estate",
+      "description": "Скромно, зато своё и без сюрпризов. Косметический ремонт — и можно работать.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 4500,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 540, аренда 80 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-34",
+      "title": "Аптека на проспекте Ленина",
+      "kind": "estate",
+      "description": "Заводской район, стабильный поток в утренние часы. Внутри старая проводка и полы.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 6100,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. ",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-35",
+      "title": "Помещение на Комсомольской",
+      "kind": "estate",
+      "description": "Раньше был пункт выдачи. Стены и свет в порядке, торгового оборудования нет вовсе.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 3900,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 470, аренда 70 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-36",
+      "title": "Аптека на Родионова, 165",
+      "kind": "estate",
+      "description": "Оборудована под электронные рецепты, компьютер и касса на месте. Дороже среднего.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 10400,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 1250, аренда 190 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-37",
+      "title": "Цоколь на Ошарской",
+      "kind": "estate",
+      "description": "Ступеньки вниз отпугивают пожилых покупателей — а это половина выручки аптеки.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 2400,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 290, аренда 45 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-38",
+      "title": "Аптека в торговом центре",
+      "kind": "estate",
+      "description": "Поток идёт весь день, но аренда места высокая, а график работы диктует центр.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 9800,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 1180, аренда 180 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-39",
+      "title": "Точка на Бурнаковской",
+      "kind": "estate",
+      "description": "Промзона рядом, покупатели — рабочие со смены. Нужен ремонт крыши и пола.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 3000,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 360, аренда 55 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-40",
+      "title": "Аптека на Совнаркомовской",
+      "kind": "estate",
+      "description": "Работающая точка с историей. Хозяин уходит на покой, документы в порядке.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 9200,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 1100, аренда 165 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "estate-41",
+      "title": "Аптека у автостанции на Циолковского",
+      "kind": "estate",
+      "description": "Поток транзитный: берут в дорогу и уезжают. Постоянных покупателей почти нет.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 3600,
+      "status": "project",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Объявления о недвижимости",
+      "notes": "Объявление в исходном каталоге недвижимости. Не равно отдельной доступной точке текущей карты. Залог аренды 430, аренда 65 за игровые сутки.",
+      "image": "",
+      "tags": [
+        "Каталог объявлений"
+      ]
+    },
+    {
+      "key": "staff-pharmacist-plain",
+      "title": "Фармацевт",
+      "kind": "staff",
+      "description": "Стоит за прилавком. Без него точка не обслуживает никого — сколько бы народу ни шло мимо.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 120,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Найм сотрудников",
+      "notes": "Разовый платёж при найме — одна дневная зарплата. Зарплата 120 монет за игровые сутки. Имена кандидатов генерируются.",
+      "image": "",
+      "tags": [
+        "Персонал сети"
+      ]
+    },
+    {
+      "key": "staff-pharmacist-friendly",
+      "title": "Фармацевт · Дружелюбный",
+      "kind": "staff",
+      "description": "Помнит покупателей по именам. Со временем это расширяет клиентскую базу — поток растёт сам, без ремонта и рекламы.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 150,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Найм сотрудников",
+      "notes": "Разовый платёж при найме — одна дневная зарплата. Зарплата 150 монет за игровые сутки. Имена кандидатов генерируются.",
+      "image": "",
+      "tags": [
+        "Персонал сети"
+      ]
+    },
+    {
+      "key": "staff-pharmacist-advisor",
+      "title": "Фармацевт · Разбирается в сопутствующих товарах",
+      "kind": "staff",
+      "description": "К каждому лекарству подсказывает, что взять заодно. Поднимает средний чек точки.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 144,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Найм сотрудников",
+      "notes": "Разовый платёж при найме — одна дневная зарплата. Зарплата 144 монет за игровые сутки. Имена кандидатов генерируются.",
+      "image": "",
+      "tags": [
+        "Персонал сети"
+      ]
+    },
+    {
+      "key": "staff-manager-plain",
+      "title": "Заведующий",
+      "kind": "staff",
+      "description": "Сам не продаёт. Без него точка не зарабатывает, пока вас нет в игре, — смена и склад стоят на месте, деньги идут только на зарплаты.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 400,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Найм сотрудников",
+      "notes": "Разовый платёж при найме — одна дневная зарплата. Зарплата 400 монет за игровые сутки. Имена кандидатов генерируются.",
+      "image": "",
+      "tags": [
+        "Персонал сети"
+      ]
+    },
+    {
+      "key": "staff-manager-thrifty",
+      "title": "Заведующий · Экономный",
+      "kind": "staff",
+      "description": "Закупает без лишнего: списывает просрочку вовремя, торгуется с поставщиком. Товар для точки обходится дешевле — та же выручка, а на закупку уходит меньше.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 480,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Найм сотрудников",
+      "notes": "Разовый платёж при найме — одна дневная зарплата. Зарплата 480 монет за игровые сутки. Имена кандидатов генерируются.",
+      "image": "",
+      "tags": [
+        "Персонал сети"
+      ]
+    },
+    {
+      "key": "facade-fixed",
+      "title": "Отремонтирована",
+      "kind": "city",
+      "description": "Чистая штукатурка, целая кровля, ясный зелёный крест на вывеске",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 500,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Цена перехода с предыдущей ступени; улучшать можно только свою аптеку.",
+      "image": "assets/10a7a2f04ae3.png",
+      "tags": []
+    },
+    {
+      "key": "facade-sign",
+      "title": "Светящаяся вывеска",
+      "kind": "city",
+      "description": "Крест светится и подсвечен лампами, появились маркиза и зелень у входа",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 1200,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Цена перехода с предыдущей ступени; улучшать можно только свою аптеку.",
+      "image": "assets/957181347352.png",
+      "tags": []
+    },
+    {
+      "key": "facade-big",
+      "title": "Расширена",
+      "kind": "city",
+      "description": "Пристроен второй проём: витрина вдвое шире, общий козырёк, два вазона",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 2500,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Цена перехода с предыдущей ступени; улучшать можно только свою аптеку.",
+      "image": "assets/819648a6cfbf.png",
+      "tags": []
+    },
+    {
+      "key": "decor-sign",
+      "title": "Вывеска-крест",
+      "kind": "city",
+      "description": "Светящийся зелёный крест над входом: аптеку видно с конца улицы.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 550,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Минимальный расчёт для точки за 3000 монет: 50 × ceil(max(3000, цена точки) × 0,18 / 50).",
+      "image": "",
+      "tags": [],
+      "basePrice": true
+    },
+    {
+      "key": "decor-light",
+      "title": "Подсветка фасада",
+      "kind": "city",
+      "description": "Тёплая архитектурная подсветка: витрина притягивает взгляд даже днём.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 750,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Минимальный расчёт для точки за 3000 монет: 50 × ceil(max(3000, цена точки) × 0,25 / 50).",
+      "image": "",
+      "tags": [],
+      "basePrice": true
+    },
+    {
+      "key": "assort-1",
+      "title": "Витрина у кассы",
+      "kind": "city",
+      "description": "Мелочи у кассы: пластыри, витамины в дорогу — берут заодно.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 750,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Пример для точки за 3000 монет. Цена зависит от стоимости точки и текущего уровня ассортимента.",
+      "image": "",
+      "tags": [],
+      "basePrice": true
+    },
+    {
+      "key": "assort-2",
+      "title": "Косметика и уход",
+      "kind": "city",
+      "description": "Полка ухода: заходят за лекарством, уходят с кремом.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 1200,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Пример для точки за 3000 монет. Цена зависит от стоимости точки и текущего уровня ассортимента.",
+      "image": "",
+      "tags": [],
+      "basePrice": true
+    },
+    {
+      "key": "assort-3",
+      "title": "Медтехника",
+      "kind": "city",
+      "description": "Тонометры и ингаляторы: редкие, но крупные покупки.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 1950,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Городская карта и развитие сети",
+      "notes": "Пример для точки за 3000 монет. Цена зависит от стоимости точки и текущего уровня ассортимента.",
+      "image": "",
+      "tags": [],
+      "basePrice": true
+    },
+    {
+      "key": "factory-build",
+      "title": "Фармацевтический завод",
+      "kind": "factory",
+      "description": "Строительство 48 реальных часов. Первая линия включена.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 30000,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Меню завода",
+      "notes": "",
+      "image": "",
+      "tags": []
+    },
+    {
+      "key": "factory-line2",
+      "title": "Вторая линия завода",
+      "kind": "factory",
+      "description": "Добавление второй производственной линии.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 18000,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Меню завода",
+      "notes": "",
+      "image": "",
+      "tags": []
+    },
+    {
+      "key": "factory-line3",
+      "title": "Третья линия завода",
+      "kind": "factory",
+      "description": "Добавление третьей производственной линии.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 26000,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Меню завода",
+      "notes": "",
+      "image": "",
+      "tags": []
+    },
+    {
+      "key": "factory-finish",
+      "title": "Мгновенно завершить строительство",
+      "kind": "factory",
+      "description": "Ускорение строительства завода; если таймер уже истёк, плата не нужна.",
+      "currency": "crystals",
+      "direction": "spend",
+      "amount": 30,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Меню завода",
+      "notes": "",
+      "image": "",
+      "tags": []
+    },
+    {
+      "key": "repair-crystals",
+      "title": "Ускорение ремонта аптеки",
+      "kind": "services",
+      "description": "Досрочно закончить ремонт аптечной точки.",
+      "currency": "crystals",
+      "direction": "spend",
+      "amount": null,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Ремонт и ускорения",
+      "notes": "1 кристалл за каждые начатые 10 минут оставшегося ремонта. Минимум 1 кристалл.",
+      "image": "",
+      "tags": []
+    },
+    {
+      "key": "repair-coins",
+      "title": "Ремонт городской аптеки",
+      "kind": "services",
+      "description": "Восстановление состояния точки: разрушена → требует ремонта → исправна.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": null,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Ремонт и ускорения",
+      "notes": "50 × ceil(max(3000, цена точки) × доля / 50), где доля 0,2 для разрушенной и 0,3 для изношенной. Срочная бригада дороже.",
+      "image": "",
+      "tags": []
+    },
+    {
+      "key": "typhoon-repair",
+      "title": "Восстановление после тайфуна",
+      "kind": "services",
+      "description": "Ремонт объектов, повреждённых городским событием.",
+      "currency": "coins",
+      "direction": "spend",
+      "amount": 120,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Ремонт и ускорения",
+      "notes": "120 монет за каждый повреждённый объект; общая сумма зависит от числа объектов.",
+      "image": "",
+      "tags": [
+        "Городское событие"
+      ]
+    },
+    {
+      "key": "daily-1",
+      "title": "Игра дня · день 1",
+      "kind": "daily",
+      "description": "Дополнительная награда за выбранную сервером игру дня.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 150,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игра дня",
+      "notes": "Пример при базе 25 монет/мин. Награда растёт с доходом; семидневный цикл. Не отдельная мини-игра.",
+      "image": "",
+      "tags": [],
+      "baseReward": true
+    },
+    {
+      "key": "daily-2",
+      "title": "Игра дня · день 2",
+      "kind": "daily",
+      "description": "Дополнительная награда за выбранную сервером игру дня.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 165,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игра дня",
+      "notes": "Пример при базе 25 монет/мин. Награда растёт с доходом; семидневный цикл. Не отдельная мини-игра.",
+      "image": "",
+      "tags": [],
+      "baseReward": true
+    },
+    {
+      "key": "daily-3",
+      "title": "Игра дня · день 3",
+      "kind": "daily",
+      "description": "Дополнительная награда за выбранную сервером игру дня.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 180,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игра дня",
+      "notes": "Пример при базе 25 монет/мин. Награда растёт с доходом; семидневный цикл. Не отдельная мини-игра.",
+      "image": "",
+      "tags": [],
+      "baseReward": true
+    },
+    {
+      "key": "daily-4",
+      "title": "Игра дня · день 4",
+      "kind": "daily",
+      "description": "Дополнительная награда за выбранную сервером игру дня.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 210,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игра дня",
+      "notes": "Пример при базе 25 монет/мин. Награда растёт с доходом; семидневный цикл. Не отдельная мини-игра.",
+      "image": "",
+      "tags": [],
+      "baseReward": true
+    },
+    {
+      "key": "daily-5",
+      "title": "Игра дня · день 5",
+      "kind": "daily",
+      "description": "Дополнительная награда за выбранную сервером игру дня.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 240,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игра дня",
+      "notes": "Пример при базе 25 монет/мин. Награда растёт с доходом; семидневный цикл. Не отдельная мини-игра.",
+      "image": "",
+      "tags": [],
+      "baseReward": true
+    },
+    {
+      "key": "daily-6",
+      "title": "Игра дня · день 6",
+      "kind": "daily",
+      "description": "Дополнительная награда за выбранную сервером игру дня.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 270,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игра дня",
+      "notes": "Пример при базе 25 монет/мин. Награда растёт с доходом; семидневный цикл. Не отдельная мини-игра.",
+      "image": "",
+      "tags": [],
+      "baseReward": true
+    },
+    {
+      "key": "daily-7",
+      "title": "Игра дня · день 7",
+      "kind": "daily",
+      "description": "Дополнительная награда за выбранную сервером игру дня.",
+      "currency": "coins",
+      "direction": "earn",
+      "amount": 330,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Игра дня",
+      "notes": "Пример при базе 25 монет/мин. Награда растёт с доходом; семидневный цикл. Не отдельная мини-игра.",
+      "image": "",
+      "tags": [],
+      "baseReward": true
+    },
+    {
+      "key": "feature-hall",
+      "title": "Аптека и покупатели",
+      "kind": "features",
+      "description": "Обслуживание покупателей, касса, полки, склад, расстановка мебели и монитор.",
+      "currency": "none",
+      "direction": "none",
+      "amount": null,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Основные игровые разделы",
+      "notes": "Игровая механика; не отдельный платный товар. Стоимость связанных действий вынесена в соответствующие разделы.",
+      "image": "",
+      "tags": []
+    },
+    {
+      "key": "feature-cats",
+      "title": "Кот аптеки и уход",
+      "kind": "features",
+      "description": "Кормление, вода, отдых, поглаживание, размещение предметов и поведение кота.",
+      "currency": "none",
+      "direction": "none",
+      "amount": null,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Основные игровые разделы",
+      "notes": "Игровая механика; не отдельный платный товар. Стоимость связанных действий вынесена в соответствующие разделы.",
+      "image": "",
+      "tags": []
+    },
+    {
+      "key": "feature-story",
+      "title": "Незваный гость",
+      "kind": "features",
+      "description": "Диалог с нетрезвым посетителем; шкалы терпения и паники; похищение кота.",
+      "currency": "none",
+      "direction": "none",
+      "amount": null,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Основные игровые разделы",
+      "notes": "Игровая механика; не отдельный платный товар. Стоимость связанных действий вынесена в соответствующие разделы.",
+      "image": "",
+      "tags": []
+    },
+    {
+      "key": "feature-chase",
+      "title": "Догони вора!",
+      "kind": "features",
+      "description": "Сюжетная погоня для возвращения кота, использует механику Frogger.",
+      "currency": "none",
+      "direction": "none",
+      "amount": null,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Основные игровые разделы",
+      "notes": "Игровая механика; не отдельный платный товар. Стоимость связанных действий вынесена в соответствующие разделы.",
+      "image": "",
+      "tags": []
+    },
+    {
+      "key": "feature-map",
+      "title": "Город и аптечная сеть",
+      "kind": "features",
+      "description": "Карта, покупка точек, найм, ремонт, ассортимент и декор.",
+      "currency": "none",
+      "direction": "none",
+      "amount": null,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Основные игровые разделы",
+      "notes": "Игровая механика; не отдельный платный товар. Стоимость связанных действий вынесена в соответствующие разделы.",
+      "image": "",
+      "tags": []
+    },
+    {
+      "key": "feature-bank",
+      "title": "Банк и кредиты",
+      "kind": "features",
+      "description": "Займы под залог аптек и погашение долга; сумма зависит от имущества и условий.",
+      "currency": "none",
+      "direction": "none",
+      "amount": null,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Основные игровые разделы",
+      "notes": "Игровая механика; не отдельный платный товар. Стоимость связанных действий вынесена в соответствующие разделы.",
+      "image": "",
+      "tags": []
+    },
+    {
+      "key": "feature-logistics",
+      "title": "Склад, поставки и логистика",
+      "kind": "features",
+      "description": "Закупки, перемещение товара и инфраструктура сети.",
+      "currency": "none",
+      "direction": "none",
+      "amount": null,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Основные игровые разделы",
+      "notes": "Игровая механика; не отдельный платный товар. Стоимость связанных действий вынесена в соответствующие разделы.",
+      "image": "",
+      "tags": []
+    },
+    {
+      "key": "feature-typhoon",
+      "title": "Тайфун на карте",
+      "kind": "features",
+      "description": "Городское событие с повреждением аптек и восстановлением.",
+      "currency": "none",
+      "direction": "none",
+      "amount": null,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Основные игровые разделы",
+      "notes": "Игровая механика; не отдельный платный товар. Стоимость связанных действий вынесена в соответствующие разделы.",
+      "image": "",
+      "tags": []
+    },
+    {
+      "key": "feature-career",
+      "title": "Карьера и ежедневные задания",
+      "kind": "features",
+      "description": "Пороговые цели 500, 1000, 1500, 2000 и 2500 заработанных монет, затем развитие сети.",
+      "currency": "none",
+      "direction": "none",
+      "amount": null,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Основные игровые разделы",
+      "notes": "Игровая механика; не отдельный платный товар. Стоимость связанных действий вынесена в соответствующие разделы.",
+      "image": "",
+      "tags": []
+    },
+    {
+      "key": "feature-paper",
+      "title": "Газета и объявления",
+      "kind": "features",
+      "description": "Городские новости, цены, объявления о недвижимости и подсказки.",
+      "currency": "none",
+      "direction": "none",
+      "amount": null,
+      "status": "available",
+      "platforms": [
+        "desktop",
+        "mobile"
+      ],
+      "source": "Основные игровые разделы",
+      "notes": "Игровая механика; не отдельный платный товар. Стоимость связанных действий вынесена в соответствующие разделы.",
+      "image": "",
+      "tags": []
+    }
+  ]
+}

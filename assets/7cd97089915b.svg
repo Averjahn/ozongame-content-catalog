@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- иконка лежанки для карточки магазина: вид сверху, компактная (квадратная),
+     отдельно от «сценовой» cat-bed.png (та рисуется сбоку на полу у аптеки) -->
+  <ellipse cx="60" cy="100" rx="42" ry="9" fill="rgba(39,56,74,0.10)"/>
+  <circle cx="60" cy="62" r="46" fill="#cfe3ee" stroke="#27384a" stroke-width="4"/>
+  <circle cx="60" cy="62" r="32" fill="#eaf3fb" stroke="#27384a" stroke-width="3"/>
+  <!-- мягкая подушка внутри -->
+  <ellipse cx="60" cy="66" rx="24" ry="16" fill="#fdfdfd"/>
+  <ellipse cx="52" cy="60" rx="8" ry="5" fill="rgba(255,255,255,0.7)"/>
+  <!-- стежка по бортику -->
+  <g stroke="#a9c3d6" stroke-width="2" fill="none">
+    <path d="M22 62 a38 38 0 0 1 12 -30"/>
+    <path d="M98 62 a38 38 0 0 0 -12 -30"/>
+    <path d="M24 82 a38 38 0 0 0 72 0"/>
+  </g>
+</svg>

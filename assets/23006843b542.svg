@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Компактная иконка кошачьего столбика для карточки в магазине -->
+  <ellipse cx="32" cy="58" rx="20" ry="4" fill="#27384a" opacity=".14"/>
+  <ellipse cx="32" cy="54" rx="18" ry="6" fill="#916c40"/>
+  <rect x="27" y="16" width="10" height="40" rx="4" fill="#c9a46a"/>
+  <rect x="27" y="16" width="4" height="40" rx="2" fill="#d8b880"/>
+  <g stroke="#a5804a" stroke-width="1.6" stroke-linecap="round">
+    <line x1="28" y1="24" x2="36" y2="23"/>
+    <line x1="28" y1="31" x2="36" y2="30"/>
+    <line x1="28" y1="38" x2="36" y2="37"/>
+    <line x1="28" y1="45" x2="36" y2="44"/>
+  </g>
+  <ellipse cx="32" cy="18" rx="18" ry="6" fill="#a5804a"/>
+  <ellipse cx="32" cy="15" rx="18" ry="6" fill="#e7cfa0"/>
+  <ellipse cx="32" cy="14" rx="12" ry="4" fill="#f4e6c8"/>
+  <path d="M46 17 q4 7 2 14" stroke="#a5804a" stroke-width="1.4" fill="none"/>
+  <circle cx="48" cy="33" r="3.5" fill="#e8635f"/>
+</svg>
